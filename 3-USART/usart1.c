@@ -15,7 +15,7 @@
 #include <stdarg.h>
 
 /**
-  * @brief  串口1的中断配置
+  * @brief  串口1的中断配置，总中断使能
   * @param  None
   * @retval None
   */
