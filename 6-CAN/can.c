@@ -178,11 +178,11 @@ void CAN_SetMsg(uint32_t ID, uint32_t low, uint32_t high){
     
     TxMessage.StdId = ID;                        
     
-  TxMessage.IDE = CAN_ID_STD;                   //扩展模式
-  TxMessage.RTR = CAN_RTR_DATA;             //发送的是数据
-  TxMessage.DLC = 8;                                    //数据长度为8字节
+	TxMessage.IDE = CAN_ID_STD;               //扩展模式
+	TxMessage.RTR = CAN_RTR_DATA;             //发送的是数据
+	TxMessage.DLC = 8;                        //数据长度为8字节
 
-    tmp = low;                                                  //0-cs，1,2-Index  ,3-Sub
+    tmp = low;                              //0-cs，1,2-Index  ,3-Sub
     for(i=0;i<4;i++){
         TxMessage.Data[i] = low;
         low = low>>8;
