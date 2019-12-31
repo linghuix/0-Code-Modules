@@ -19,6 +19,23 @@ extern   CanTxMsg TxMessage;
 
 
 /*
+ * 函数名：CAN_Config
+ * 描述  ：完整配置CAN的功能
+ * 输入  ：无
+ * 输出  : 无
+ * 调用  ：外部调用
+ */
+void CAN_Config(void)
+{
+  CAN_GPIO_Config();
+  CAN_NVIC_Config();
+  CAN_Mode_Config();
+  CAN_Filter_Config();   
+}
+
+
+
+/*
  * 函数名：CAN_GPIO_Config
  * 描述  ：CAN的GPIO 配置,PB8上拉输入，PB9推挽输出
  * 输入  ：无
@@ -132,22 +149,6 @@ static void CAN_Filter_Config(void)
 	CAN_FilterInit(&CAN_FilterInitStructure);
 	/*CAN通信中断使能*/
 	CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE);
-}
-
-
-/*
- * 函数名：CAN_Config
- * 描述  ：完整配置CAN的功能
- * 输入  ：无
- * 输出  : 无
- * 调用  ：外部调用
- */
-void CAN_Config(void)
-{
-  CAN_GPIO_Config();
-  CAN_NVIC_Config();
-  CAN_Mode_Config();
-  CAN_Filter_Config();   
 }
 
 
