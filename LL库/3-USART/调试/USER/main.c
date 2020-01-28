@@ -28,15 +28,12 @@ int main(void)
 
 	USART_init();
 	
-	printf("\r\n this is a printf Interrupt demo \r\n");
-	printf("\r\n 欢迎使用开拓者STM32 开发板 \r\n");
-	printf("\r\n***************串口实验--接受中断实验**************** \r\n");
-	printf("\r\n描述:在超级终端敲入一系列字符，注意，必须要回车结尾\r\n");
+	printf("\r\n***************红外线遥控器串口实验**************** \r\n");
 	printf("\r\n     单片机接收到数据之后直接按原样打印出来 \r\n");
 	printf("\r\n请开始输入字符串: \r\n");
 	
-	USART_Receive_IT(&husart1, usart1_Rxmsg, 1);
-	USART_Receive_IT(&husart2, usart2_Rxmsg, 3);
+	USART_Receive_IT(&husart1, usart1_Rxmsg, 1);	
+	USART_Receive_IT(&husart2, usart2_Rxmsg, 1);	//接收一个字节
 	USART_Receive_IT(&husart3, usart3_Rxmsg, 4);
 	
 	while(1)

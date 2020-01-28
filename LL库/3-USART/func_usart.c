@@ -178,14 +178,14 @@ void USART_Rx_callback(USART_handle *husart){
 	
 		USART_Receive_IT(&husart1, usart1_Rxmsg, 1);
 	}
-	else if(husart->USART == USART2){
+	else if(husart->USART == USART2){		//将串口接收到的数据输出
 		
-		for(i=0;i<3;i++){
+		for(i=0;i<1;i++){
 			data[i]=usart2_Rxmsg[i];
 			printf("%X\r\n",data[i]);
 		}
 
-		USART_Receive_IT(&husart2, usart2_Rxmsg, 3);
+		USART_Receive_IT(&husart2, usart2_Rxmsg, 1);
 	}
 	else if(husart->USART == USART3){
 		
